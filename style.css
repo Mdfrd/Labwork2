@@ -25,7 +25,6 @@ div.topbar {
     grid-template-columns: 2fr 4fr;
     grid-gap: 20px;
     grid-template-areas: "header header";
-
 }
 
 
@@ -62,22 +61,38 @@ div.topbar {
 }
 
 .container {
-    display: grid;
-    grid-template-rows: 50px 100px;
-    grid-gap: 50px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
     border: 3px solid rgb(225, 221, 191);
-    margin: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.card1 {
+    border: 3px solid rgb(225, 221, 191);
+    margin: 7px;
+    width: 130px;
     padding: 10px;
     border-radius: 12px;
 }
 
-.card {
+.card2 {
     border: 3px solid rgb(225, 221, 191);
     margin: 7px;
-    width: 700px;
+    width: 130px;
     padding: 10px;
     border-radius: 12px;
     height: fit-content;
+}
+
+.card3 {
+    border: 3px solid rgb(225, 221, 191);
+    margin: 7px;
+    width: 130px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .topbar>a {
@@ -86,4 +101,49 @@ div.topbar {
 
 .topbar>a:hover {
     background-color: yellow;
+}
+
+
+@media(max-width:1300px) {
+    .container {
+        flex-flow: row wrap;
+    }
+
+    .container>.card1 {
+        order: 1;
+        flex: 0.5;
+    }
+
+    .container>.card2 {
+        order: 2;
+        flex: 0.5;
+    }
+
+    .container>.card3 {
+        order: 3;
+        width: 100%;
+    }
+}
+
+
+
+@media(max-width:750px) {
+    .container {
+        flex-flow: column wrap;
+    }
+
+    .container>.card1 {
+        order: 1;
+        flex: 0.5;
+    }
+
+    .container>.card2 {
+        order: 2;
+        flex: 0.5;
+    }
+
+    .container>.card3 {
+        order: 3;
+        width: 100%;
+    }
 }
